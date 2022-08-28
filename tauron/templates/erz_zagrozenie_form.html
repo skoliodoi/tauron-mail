@@ -1,0 +1,87 @@
+{%extends "index.html"%}{%block content%}
+
+<div class="ui container" style="margin-top: 15px;">
+  {%include "erz_zagrozenie_podsumowanie.html"%}
+  <div class="ui fluid card" id="form-card">
+    <div class="content card head">
+      <div class="header">
+        <h2 class="ui large header" style="text-align: center;">{{header_text}} </h2>
+      </div>
+    </div>
+    <div class="content">
+      <form method="POST" class="ui form" id="zagrozenie_form">
+        <div class="two fields">
+          <div class="field">
+            {{form.miejscowosc.label()}}
+            {{form.miejscowosc(id="zagrozenie_miejscowosc")}}
+          </div>
+          <div class="field">
+            {{form.gmina.label()}}
+            {{form.gmina(id="zagrozenie_gmina")}}
+          </div>
+        </div>
+
+        <div class="three fields">
+          <div class="field">
+            {{form.ulica.label()}}
+            {{form.ulica(id="zagrozenie_ulica")}}
+          </div>
+          <div class="field">
+            {{form.nr_budynku.label()}}
+            {{form.nr_budynku(id="zagrozenie_dom")}}
+          </div>
+          <div class="field">
+            {{form.kod_pocztowy.label()}}
+            {{form.kod_pocztowy(id="zagrozenie_kod")}}
+          </div>
+        </div>
+        <div class="two fields">
+
+          <div class="field">
+            {{form.nazwisko.label()}}
+            {{form.nazwisko(id="zagrozenie_nazwisko_firma")}}
+          </div>
+          <div class="field">
+            {{form.telefon.label()}}
+            {{form.telefon(id="zagrozenie_telefon")}}
+          </div>
+        </div>
+
+        <div class="field">
+          {{form.opis.label()}}
+          {{form.opis(id="zagrozenie_opis")}}
+        </div>
+        <div class="field">
+          {{form.koronawirus.label()}}
+          {{form.koronawirus(id="zagrozenie_koronawirus")}}
+        </div>
+        <div class="inline fields">
+          <label for="napiecie">Stan napięciowy w budynku</label>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="napiecie" value="Brak fazy" tabindex="0" class="hidden">
+              <label>Brak fazy</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="napiecie" value="Brak zasilania" tabindex="0" class="hidden">
+              <label>Brak zasilania</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="napiecie" value="Zasilanie prawidłowe" tabindex="0" class="hidden">
+              <label>Zasilanie prawidłowe</label>
+            </div>
+          </div>
+        </div>
+    </div>
+    <button class="ui bottom attached button" id="zagrozenie_button">Zapisz</button>
+    </form>
+
+  </div>
+
+</div>
+
+{%endblock%}

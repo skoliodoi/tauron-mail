@@ -1,0 +1,37 @@
+.ui.menu,
+.ui.bottom.attached.button,
+.ui.fluid.card .content.card.head,
+#zagrozenie_submit, #login {
+  background-color: #F8017B;
+}
+
+.ui.menu .item,
+.ui.bottom.attached.button,
+.ui.fluid.card .content.card.head .header, #zagrozenie_submit {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* .ui.bottom.attached.button {
+  background-color: #F8017B !important;
+} */
+
+.ui.menu .item:first-of-type {
+  border-right: 1px solid whitesmoke;
+}
+
+.ui.menu .item:last-of-type {
+  border-left: 1px solid whitesmoke;
+
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px);
+}

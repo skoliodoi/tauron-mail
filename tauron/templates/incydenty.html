@@ -1,0 +1,53 @@
+{%extends "index.html"%}{%block content%}
+
+<div class="ui container" style="margin-top: 15px;">
+  <div class="ui fluid card" id="form-card">
+    <div class="content card head">
+      <div class="header">
+        <h2 class="ui large header" style="text-align: center;">{{header_text}} </h2>
+      </div>
+    </div>
+    <div class="content">
+      <form method="POST" class="ui form">
+
+        <div class="two fields">
+          <div class="field">
+
+            {{form.rodzaj.label()}}
+            {{form.rodzaj()}}
+          </div>
+          <div class="field">
+            {{form.data_zgloszenia.label()}}
+            {{form.data_zgloszenia()}}
+          </div>
+        </div>
+
+        <div class="three fields">
+          <div class="field">
+            {{form.dane_osobowe.label()}}
+            {{form.dane_osobowe()}}
+          </div>
+          <div class="field">
+            {{form.telefon.label()}}
+            {{form.telefon()}}
+          </div>
+          <div class="field">
+            {{form.email.label()}}
+            {{form.email()}}
+          </div>
+        </div>
+
+        <div class="field">
+          {{form.opis.label()}}
+          {{form.opis(id="zagrozenie_opis")}}
+        </div>
+
+    </div>
+    {{form.send(class="ui bottom attached button")}}
+    </form>
+
+  </div>
+
+</div>
+
+{%endblock%}

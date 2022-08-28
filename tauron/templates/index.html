@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tauron-{% block title %}Home{% endblock %}</title>
+  <script src="{{ url_for('static', filename='src/jquery.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/dist/semantic.min.css') }}">
+  <script src="{{ url_for('static', filename='/dist/semantic.min.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/src/styles.css') }}">
+
+
+</head>
+
+<body>
+  {%if not hide_navbar%}
+  {% include "navbar.html"%}
+  {%endif%}
+  <div id="main-container" class="bg-gray-100">
+
+    {% block content%} {% endblock%}
+
+  </div>
+  <script src="{{ url_for('static', filename='src/script.js') }}"></script>
+</body>
+
+</html>

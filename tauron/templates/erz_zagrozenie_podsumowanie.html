@@ -1,0 +1,77 @@
+<div class="ui fluid card" style="display: none;" id="podsumowanie-card">
+  <div class="content card head">
+    <div class="header">
+      <h2 class="ui large header" style="text-align: center;">{{header_text}} - podsumowanie </h2>
+    </div>
+  </div>
+  <div class="content">
+    <form method="POST" class="ui form">
+      <div class="two fields">
+        <div class="field">
+          <label for="">Miejscowość</label>
+          <div id="zag-pod-miej"></div>
+        </div>
+        <div class="field">
+          <label for="">Gmina</label>
+          <div id="zag-pod-gmina"></div>
+        </div>
+      </div>
+
+      <!-- <div class="field">
+            {{form.gmina.label()}}
+            {{form.gmina()}}
+          </div> -->
+      <div class="three fields">
+        <div class="field">
+          <label for="">Ulica</label>
+          <div id="zag-pod-ulica"></div>
+        </div>
+        <div class="field">
+          <label for="">Numer budynku/lokalu</label>
+          <div id="zag-pod-dom"></div>
+        </div>
+        <div class="field">
+          <label for="">Kod pocztowy</label>
+          <div id="zag-pod-kp"></div>
+        </div>
+      </div>
+
+      <div class="two fields">
+        <div class="field">
+          <label for="">Nazwisko/Firma</label>
+          <div id="zag-pod-nf"></div>
+        </div>
+        <div class="field">
+          <label for="">Telefon</label>
+          <div id="zag-pod-tel"></div>
+        </div>
+
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label for="">Koronawirus</label>
+          <div id="zag-pod-korona"></div>
+        </div>
+        <div class="field">
+          <label for="">Stan napięcia</label>
+          <div id="zag-pod-stan"></div>
+        </div>
+
+      </div>
+      <div class="field">
+        <label for="">Opis</label>
+        <div id="zag-pod-opis"></div>
+      </div>
+
+
+
+  </div>
+  <div class="ui bottom attached buttons">
+    <button class="ui button" id="zagrozenie_popraw">Popraw dane</button>
+    <button class="ui button" id="zagrozenie_submit">Wyślij zgłoszenie</button>
+  </div>
+
+  </form>
+
+
+</div>

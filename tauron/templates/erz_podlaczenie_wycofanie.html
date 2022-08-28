@@ -1,0 +1,90 @@
+{%extends "index.html"%}{%block content%}
+<div class="ui container" style="margin-top: 25px;">
+  <div class="ui fluid card">
+    <div class="content card head">
+      <div class="header">
+        <h2 class="ui large header" style="text-align: center;">{{header_text}} </h2>
+      </div>
+    </div>
+    <div class="content">
+      <form method="POST" class="ui form">
+        <div class="two fields">
+          <div class="field">
+            {{ form.hidden_tag()}}
+            {{form.rejon.label()}}
+            {{form.rejon(id="rejon")}}
+          </div>
+          <div class="field">
+            {{form.lokalizacja.label()}}
+            {{form.lokalizacja(id="lokalizacja")}}
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            {{form.nr_ot.label()}}
+            {{form.nr_ot()}}
+          </div>
+          <div class="field">
+            {{form.rodzaj_klienta.label()}}
+            {{form.rodzaj_klienta()}}
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+
+            {{form.imie.label()}}
+            {{form.imie()}}
+          </div>
+          <div class="field">
+            {{form.nazwisko.label()}}
+            {{form.nazwisko()}}
+          </div>
+        </div>
+        <div class="three fields">
+
+
+          <div class="field">
+            {{form.adres.label()}}
+            {{form.adres()}}
+          </div>
+          <div class="field">
+            {{form.miasto.label()}}
+            {{form.miasto()}}
+          </div>
+          <div class="field">
+            {{form.kod_pocztowy.label()}}
+            {{form.kod_pocztowy()}}
+          </div>
+        </div>
+
+        <div class="three fields">
+          <div class="field">
+            {{form.telefon.label()}}
+            {{form.telefon()}}
+          </div>
+          <div class="field">
+            {{form.nr_ewidencyjny.label()}}
+            {{form.nr_ewidencyjny()}}
+          </div>
+          <div class="field">
+            {{form.nr_ppe.label()}}
+            {{form.nr_ppe()}}
+          </div>
+        </div>
+        <div class="field">
+          {{form.koronawirus.label()}}
+          {{form.koronawirus(id="koronawirus")}}
+        </div>
+        <div class="field">
+          {{form.notatka.label()}}
+          {{form.notatka()}}
+        </div>
+
+    </div>
+    {{form.send(class="ui bottom attached button")}}
+    </form>
+  </div>
+
+</div>
+
+{%endblock%}
