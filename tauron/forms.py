@@ -20,7 +20,7 @@ incydenty = ["", "BOMBA, AKT TERRORYZMU, ZAGROŻENIE KRYTYCZNE",
 
 
 class Incydent(FlaskForm):
-    rodzaj = SelectField("Rodzaj incydentu", choices=incydenty)
+    rodzaj = SelectField("Rodzaj incydentu", [DataRequired()], choices=incydenty)
     data_zgloszenia = DateField("Data zgłoszenia")
     dane_osobowe = StringField("Imię i nazwisko")
     telefon = StringField("Telefon kontaktowy")
@@ -32,8 +32,8 @@ class Incydent(FlaskForm):
 class ErzAwaryjnePodlaczenie(FlaskForm):
     imie = StringField("Imię", render_kw={"placeholder": "Imię"})
     nazwisko = StringField("Nazwisko", render_kw={"placeholder": "Nazwisko"})
-    rejon = SelectField("Rejon", choices=rejony)
-    lokalizacja = SelectField("Lokalizacja (najpierw wybierz rejon)", choices=[
+    rejon = SelectField("Rejon", [DataRequired()], choices=rejony)
+    lokalizacja = SelectField("Lokalizacja (najpierw wybierz rejon)", [DataRequired()], choices=[
     ], render_kw={"disabled": True})
     # lokalizacja = SelectField("Wybierz opcje z pola REJON DYSTRYBUCJI")
     nr_ot = StringField("Numer wystawionego zlecenia OT",
@@ -60,8 +60,8 @@ class ErzAwaryjnePodlaczenie(FlaskForm):
 class ErzWycofanieLubWznowienie(FlaskForm):
     imie = StringField("Imię", render_kw={"placeholder": "Imię"})
     nazwisko = StringField("Nazwisko", render_kw={"placeholder": "Nazwisko"})
-    rejon = SelectField("Rejon", choices=rejony)
-    lokalizacja = SelectField("Lokalizacja (najpierw wybierz rejon)", choices=[
+    rejon = SelectField("Rejon", [DataRequired()], choices=rejony)
+    lokalizacja = SelectField("Lokalizacja (najpierw wybierz rejon)", [DataRequired()], choices=[
     ], render_kw={"disabled": True})
     nr_ot = StringField("Numer wystawionego zlecenia OT",
                         render_kw={"placeholder": "Numer OT"})

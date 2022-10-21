@@ -7,6 +7,7 @@ class User:
         query = f"SELECT TOP 1 * FROM Tauron_Users WHERE user_login = '{id}'"
         cursor.execute(query)
         dane = cursor.fetchone()
+        print(dane)
         self.id = dane[0]
         self.name = dane[1]
         self.last_name = dane[2]

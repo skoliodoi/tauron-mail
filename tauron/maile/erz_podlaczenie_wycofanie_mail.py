@@ -13,10 +13,8 @@ def podlaczenie_wycofanie(**kwargs):
   <span><b>Kod pocztowy:</b> {kwargs['kod_pocztowy']}</span>
   <span><b>Numer ewidencyjny:</b> {kwargs['nr_ewidencyjny']}</span>
   <span><b>Numer PPE:</b> {kwargs['nr_ppe']}</span>
-  <span><b>Numer licznika:</b> {kwargs['nr_licznika']}</span>
   <span><b>Telefon:</b> {kwargs['telefon']}</span>
   <span><b>Koronawirus:</b> {kwargs['koronawirus']}</span>
-  <span><b>Powód:</b> {kwargs['powod']}</span>
   <span><b>Dodatkowe informacje:</b> {kwargs['notatka']}</span>
   <table style="border-collapse: collapse">
   <tbody>

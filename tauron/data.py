@@ -273,18 +273,17 @@ oddzialy = {
             "POK 1 Gliwice": {
                 'symbol_rd': '',
                 'symbol_sod': 'PN41',
-                # 'email': ['Magdalena.Paprocka@tauron-dystrybucja.pl',
-                #           'Karol.Szczewczyk@tauron-dystrybucja.pl',
-                #           'Patrycja.Lasota@tauron-dystrybucja.pl',
-                #           'Małgorzata.Bednarz@tauron-dystrybucja.pl',
-                #           'Alina.Chwiolka@tauron-dystrybucja.pl',
-                #           'Monika.Baluch@tauron-dystrybucja.pl',
-                #           'Barbara.Korzekwa@tauron-dystrybucja.pl',
-                #           'Maria.Kuchmann@tauron-dystrybucja.pl',
-                #           'Sylwia.Wilk@tauron-dystrybucja.pl',
-                #           'Malgorzata.Horpynka-Ledwig@tauron-dystrybucja.pl',
-                #           ]
-                'email': ['szymon.zygaluk@gmail.com', 'szymon.ulanowski@oex-vcc.com']
+                'email': ['Magdalena.Paprocka@tauron-dystrybucja.pl',
+                          'Karol.Szczewczyk@tauron-dystrybucja.pl',
+                          'Patrycja.Lasota@tauron-dystrybucja.pl',
+                          'Małgorzata.Bednarz@tauron-dystrybucja.pl',
+                          'Alina.Chwiolka@tauron-dystrybucja.pl',
+                          'Monika.Baluch@tauron-dystrybucja.pl',
+                          'Barbara.Korzekwa@tauron-dystrybucja.pl',
+                          'Maria.Kuchmann@tauron-dystrybucja.pl',
+                          'Sylwia.Wilk@tauron-dystrybucja.pl',
+                          'Malgorzata.Horpynka-Ledwig@tauron-dystrybucja.pl',
+                          ]
             },
             "POK 2 Zabrze": {
                 'symbol_rd': '',

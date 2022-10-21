@@ -1,0 +1,16 @@
+{%extends "index.html"%}{%block content%}
+<div class="ui container" style="margin-top: 15px;">
+  <div class="ui error message">
+    <div class="header">
+      Uwaga!
+    </div>
+    <p>Twoja wiadomość <strong>nie została wysłana</strong></p>
+    <p>Szczegóły:</p>
+    <ul class="list">
+      <li>{{error}}</li>
+    </ul>
+  </div>
+
+</div>
+
+{%endblock%}

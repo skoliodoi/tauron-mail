@@ -1,5 +1,4 @@
-from unicodedata import name
-from flask import Blueprint, jsonify, render_template, redirect, url_for, request
+from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from tauron.forms import ErzAwaryjnePodlaczenie, ErzWycofanieLubWznowienie, ErzZagrozenieZycia, Incydent
 from tauron.maile.erz_podlaczenie_wycofanie_mail import podlaczenie_wycofanie
@@ -8,6 +7,7 @@ from tauron.maile.erz_awaryjne_podlaczenie_mail import awaryjne_podlaczenie
 from tauron.maile.incydent_mail import zglos_incydent_mail
 from .data import oddzialy
 from datetime import datetime, time
+import pyodbc
 
 import yagmail
 
@@ -20,14 +20,13 @@ godzina_19 = time(19, 0)
 # mail_smart = 'tdp.ami.scw@tauron-dystrybucja.pl'
 # mail_incydenty = 'incydent@tauron.pl'
 
-mail_incydenty = ['szymon.ulanowski@oex-vcc.com',
-                  'szymon.zygaluk@gmail.com']
-mail_awarie = ['szymon.ulanowski@oex-vcc.com', 'szymon.zygaluk@gmail.com']
-mail_991 = ['szymon.ulanowski@oex-vcc.com', 'szymon.zygaluk@gmail.com']
-mail_smart = ['szymon.ulanowski@oex-vcc.com', 'szymon.zygaluk@gmail.com']
-reply_mail = ['szymon.ulanowski@oex-vcc.com', 'szymon.zygaluk@gmail.com']
+mail_incydenty = 'szymon.ulanowski@oex-vcc.com'
+mail_awarie = 'szymon.ulanowski@oex-vcc.com'
+mail_991 = 'szymon.ulanowski@oex-vcc.com'
+mail_smart = 'szymon.ulanowski@oex-vcc.com'
+reply_mail = 'szymon.ulanowski@gmail.com'
 
-yag = yagmail.SMTP('njootek', 'toutajohntjenkkr')
+yag = yagmail.SMTP(user={'tauron.support@voicecc.pl': 'VCC Tauron'}, password="C$^<uPPet_xKwj2uh,{_", host="poczta.voicecc.pl", port=25, smtp_ssl=False)
 
 
 def ogarnij_podpis():
@@ -80,6 +79,12 @@ def success(mail):
     return render_template("success.html", mail=mail)
 
 
+@main.route('/success/<err>')
+@login_required
+def error(err):
+    return render_template("error.html", error=err)
+
+
 @main.route('/incydent', methods=["POST", "GET"])
 @login_required
 def incydent():
@@ -107,8 +112,8 @@ def incydent():
             )
             send_mail(email, mail_wstep, html)
             return redirect(url_for('main.success', mail=email))
-        except:
-            pass
+        except pyodbc.Error as e:
+            return redirect(url_for('main.error', err=e))
     return render_template("incydenty.html", header_text=header_text, form=form)
 
 
@@ -212,8 +217,7 @@ def erz_wycofanie(akcja):
     if request.method == "POST":
         user_data = ogarnij_podpis()
         try:
-            email = mail_991
-
+            email = ogarnij_dotyczenie(form.rejon.data, form.lokalizacja.data)
             html = podlaczenie_wycofanie(
                 wstep=mail_wstep,
                 rejon_dystrybucji=form.rejon.data,
@@ -239,6 +243,6 @@ def erz_wycofanie(akcja):
             # print("BOOOF-a!")
             send_mail(email, temat, html)
             return redirect(url_for('main.success', mail=email))
-        except:
-            pass
+        except Exception as e:
+            print(e)
     return render_template("erz_podlaczenie_wycofanie.html", header_text=header_text, form=form, wznowienie=wznowienie)
